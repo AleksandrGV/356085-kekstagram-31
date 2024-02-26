@@ -1,14 +1,11 @@
-//Функция для проверки длины строки
-const getLengthString = (string, maxLength) => {
-  for(let i = 0; i < string.length; i++) {
-    return (string.length <= maxLength);
-  }
-};
+//Функция для проверки длины строки сокращенный вариант,
+// по default присвоены значения string и maxLength
+const getLengthString = (string = '', maxLength = 1) => string.length <= maxLength;
 
 getLengthString('проверяемая строка', 20);
 
 // Функция для проверки, является ли строка палиндромом.
-const gerPalindrome = (string) => {
+const isPalindrome = (string = '') => {
   const normalizedString = string.toLowerCase().replaceAll(' ', '');
   let newLines = '';
   for (let i = normalizedString.length - 1; i >= 0; i--) {
@@ -17,7 +14,7 @@ const gerPalindrome = (string) => {
   return newLines === normalizedString;
 };
 
-gerPalindrome('топот');
+isPalindrome('топот');
 
 // Функция принимает строку, извлекает содержащиеся в ней цифры от 0 до 9 и возвращает их в виде целого положительного числа. Если в строке нет ни одной цифры, функция должна вернуть NaN
 const getStringNumber = (string) => {
